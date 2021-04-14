@@ -1,0 +1,75 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: Gotham Rounded, sans-serif;
+  font-weight: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to right, rgba(70, 141, 134), rgba(90, 180, 170));
+}
+
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid rgba(4, 14, 17);
+  outline: none;
+  background-color: rgba(12, 22, 26);
+  color: white;
+}
+
+.calculator-grid > button:hover {
+  background-color: rgba(12, 22, 26, 0.9);
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: rgba(1, 8, 7);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 10px;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  border-radius: 10px 10px 0 0;
+}
+
+.output .previous-operand {
+  color: rgba(93, 187, 177);
+  font-size: 1.5rem;
+}
+
+.output .current-operand {
+  color: white;
+  font-size: 2.5rem;
+}
+
+#op {
+  background-color: rgba(38, 82, 88);
+}
+
+#equal {
+  background-color: rgba(76, 152, 143);
+  border-radius: 0 0 10px 0;
+}
+
+#dot {
+  border-radius: 0 0 0 10px;
+}
