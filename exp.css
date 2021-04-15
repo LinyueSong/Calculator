@@ -31,9 +31,29 @@ h1 {
   box-shadow: 5px 5px rgb(52, 52, 52);
 }
 
-img {
-  height: 40%;
-  width: 40%;
+#stuff {
+  height: 400px;
+  width: 400px;
+}
+
+#calc {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: 49%;
+  left: 52.5%;
+  cursor: pointer;
+  animation: MoveUpDown 2s linear infinite;
+}
+
+@keyframes MoveUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
 }
 .scroll-down {
   height: 50px;
@@ -45,7 +65,7 @@ img {
   bottom: 20px;
   border-radius: 50px;
   cursor: pointer;
-  box-shadow: 10px 5px 5px rgb(52, 52, 52);
+  /* box-shadow: 10px 5px 5px rgb(52, 52, 52); */
 }
 
 .scroll-down::before,
@@ -80,6 +100,55 @@ img {
   }
   100% {
     top: 90%;
+    opacity: 0;
+  }
+}
+
+.scroll-up {
+  height: 50px;
+  width: 30px;
+  border: 2px solid white;
+  position: absolute;
+  left: 50%;
+  /* transform: translateX(-50%); */
+  top: 102%;
+  border-radius: 50px;
+  cursor: pointer;
+  /* box-shadow: 10px 5px 5px rgb(52, 52, 52); */
+}
+
+.scroll-up::before,
+.scroll-up::after {
+  content: "";
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  height: 10px;
+  width: 10px;
+  transform: translate(-50%, 100%) rotate(45deg);
+  border: 2px solid white;
+  border-bottom: transparent;
+  border-right: transparent;
+  animation: scroll-up 1s ease-in-out infinite;
+}
+.scroll-up::before {
+  bottom: 30%;
+  animation-delay: 0.3s;
+}
+
+@keyframes scroll-up {
+  0% {
+    /* top:20%; */
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 90%;
     opacity: 0;
   }
 }
